@@ -22,3 +22,37 @@ class ObsidianClient:
     )
 
     response.raise_for_status()
+
+  def read_note(self,path:  str) -> str:
+    url = f"{self.base_url}/vault/{path}"
+
+    headers = {
+      "Authorization": f"Bearer {self.api_key}",
+    }
+
+    response = requests.get(
+      url,
+      headers=headers,
+      verify=self.verify_ssl,
+    )
+
+    response.raise_for_status()
+
+    return response.text
+  
+  def append_to_note(self,path: str,content:str):
+    url = f"{self.base_url}/vault/{path}"
+
+    headers = {
+      "Authorization": f"Bearer {self.api_key}",
+      "Content-Type": "text/markdown",
+    }
+
+    response = requests.post(
+      url,
+      headers=headers,
+      data=content.encode("utf-8"),
+      verify=self.verify_ssl,
+    )
+
+    response.raise_for_status()

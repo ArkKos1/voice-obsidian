@@ -22,10 +22,10 @@ client = ObsidianClient(
   verify_ssl=obsidian_verify_ssl
 )
 
-client.create_note(
+client.append_to_note(
   "Test.md",
-  "# Fuck this fuckin shit"
-)
+  "\n\nДобавил хуету")
+
 
 
 print("Note created successfully")
