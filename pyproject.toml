@@ -7,6 +7,10 @@ name = "voice-obsidian"
 version = "0.1.0"
 description = "Voice-controlled interface for Obsidian"
 requires-python = ">=3.11"
+dependencies = [
+    "requests",
+    "python-dotenv",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
