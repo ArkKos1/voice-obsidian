@@ -8,7 +8,7 @@ class Executor:
       "create_folder": self.create_folder,
       # "navigate_folder": self.navigate_folder,
       # "open_note": self.open_note,
-      # "create_note": self.create_note,
+      "create_note": self.create_note,
       # "set_property": self.set_property,
       # "insert_text": self.insert_text,
       # "append_text": self.append_text,
@@ -30,3 +30,10 @@ class Executor:
     folder = command.entities["FOLDER"]
     
     return self.obsidian.create_folder(folder)
+
+  def create_note(self,command):
+    note = command.entities["NOTE"]
+    try:
+      return self.obsidian.create_note(note=note,folder_path=command.entities["FOLDER"])
+    except KeyError:
+      return self.obsidian.create_note(note=note)

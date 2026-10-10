@@ -1,0 +1,3 @@
+{"text": "Создай заметку империя леория", "intent": "create_note", "entities": [{"start": 15, "end": 29, "label": "NOTE"}]}
+{"text": "Создай заметку программирование в папке важное", "intent": "create_note", "entities": [{"start": 15, "end": 31, "label": "NOTE"}, {"start": 40, "end": 46, "label": "FOLDER"}]}
+

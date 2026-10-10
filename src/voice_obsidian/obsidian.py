@@ -31,3 +31,13 @@ class ObsidianClient:
     path = self.vault_path/folder_path
     path.mkdir(parents=True,exist_ok=True)
     print("Папка создана")
+
+  def create_note(self,note:str,folder_path=None):
+    if folder_path is not None:
+      path=self.vault_path/folder_path/f"{note}.md"
+      path.touch()
+      print("Заметка создана")
+    else:
+      path=self.vault_path/f"{note}.md"
+      path.touch()
+      print("Заметка создана")
